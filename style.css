@@ -1,0 +1,92 @@
+.body {
+    background-color: aquamarine;
+}
+
+.icn-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon_solid{
+    width:100px;
+    height:100px;
+
+    background-image: url("icons/FoJYdD.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    cursor:pointer;
+    border: 5px solid rgb(129, 129, 129); /* Essential for border-image to work */ 
+    border-radius: 15px;
+    border-style: solid;
+    
+    transition-duration: 0.5s;
+}
+
+.icon_solid:hover {
+    width:125px;
+    height:125px;
+    background-color: #f00;
+    transition-duration: 0.5s;
+}
+
+/* .icon_solid:active {
+    border-color: blue;
+    transition-duration: 0.5s;
+} */
+
+/* .image-icon_solid::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url('icons/icon_border.svg');
+        background-color: rgb(0, 0, 0); /* Semi-transparent black overlay */
+        /* Add other styles like transitions, etc. 
+    } */
+
+.icon_solid img {
+    z-index: 1; /* Appears below element 2 */
+    width:95%;
+    height: 95%;   
+}
+
+
+.icon_gradient{
+    width:100px;
+    height:100px;
+
+    background-image: 
+        linear-gradient(to bottom, rgba(91, 91, 91, 0), rgba(0, 0, 0, 0.1)), 
+        url('icons/FoJYdD.png'),
+        radial-gradient(circle at top left, rgb(221, 0, 255),#ffffff00),
+        radial-gradient(circle at top left, #ffffff00,#0088ffde);
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor:pointer;
+    
+    border: double 5px transparent;
+    border-radius: 15px;
+    background-origin: border-box;
+    background-clip: border-box, padding-box, border-box;
+    
+    transition-duration: 0.5s;
+}
+
+.icon_gradient:hover {
+    width:125px;
+    height:125px;
+    transition-duration: 0.5s;
+}
+
+.test {
+  width: 300px;
+  height: 80px;
+  border: double 4px transparent;
+  border-radius: 80px;
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #f00,#3020ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
