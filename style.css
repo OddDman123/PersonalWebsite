@@ -7,17 +7,18 @@
     flex-direction: row;
     flex-wrap: nowrap;
 
-    justify-content: flex-start; 
-    /* align-items:center; */
-    margin-left: auto;
-    margin-right: auto;
+    justify-content:flex-start; 
+    align-items:center;
+    padding: 20px; /*Adds some spacing inside the container */
+    gap: 20px;
 
     position: absolute;
-    left: 45%;
+    left: 30%;
     top: 0;
-
-    width: 50%;
+ 
+    width: 65%;
     height: 150px;
+    
     overflow-x: scroll;
     /* Firefox */
     scrollbar-width: none; 
@@ -26,12 +27,19 @@
     
     mask-image: linear-gradient(to right, transparent 0%, black 5%,black 95%, transparent 100%);
     
-    border: 1px solid rgb(0, 0, 0); 
-    padding: 30px; /*Adds some spacing inside the container */
-    gap: 30px;
-
-
+    /* border: 1px solid rgb(0, 0, 0);  */
+    background-color: aqua;
 }
+
+.icon_solid:hover ~ .icon_solid {
+  transform: translateX(20px);
+  opacity: 0.9;
+}
+.icon_solid:has(~ .icon_solid:hover) {
+    transform: translateX(-20px);
+    opacity: 0.9;
+}
+
 
 .icon_solid{
     min-width: 100px;
