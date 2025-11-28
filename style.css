@@ -3,14 +3,42 @@
 }
 
 .icn-group {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: flex-start; 
+    /* align-items:center; */
+    margin-left: auto;
+    margin-right: auto;
+
+    position: absolute;
+    left: 45%;
+    top: 0;
+
+    width: 50%;
+    height: 150px;
+    overflow-x: scroll;
+    /* Firefox */
+    scrollbar-width: none; 
+    /* Internet Explorer 10+ */
+    -ms-overflow-style: none;  
+    
+    mask-image: linear-gradient(to right, transparent 0%, black 5%,black 95%, transparent 100%);
+    
+    border: 1px solid rgb(0, 0, 0); 
+    padding: 30px; /*Adds some spacing inside the container */
+    gap: 30px;
+
+
 }
 
 .icon_solid{
+    min-width: 100px;
+    flex: 0 0 auto;
     width:100px;
     height:100px;
-
+    
     background-image: url("icons/FoJYdD.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -19,43 +47,27 @@
     cursor:pointer;
     border: 5px solid rgb(129, 129, 129); /* Essential for border-image to work */ 
     border-radius: 15px;
-    border-style: solid;
-    
     transition-duration: 0.5s;
 }
 
 .icon_solid:hover {
-    width:125px;
-    height:125px;
+    width: 150px;
+    height: 150px;
+    
     background-color: #f00;
     transition-duration: 0.5s;
 }
 
-/* .icon_solid:active {
+.icon_solid:active {
     border-color: blue;
     transition-duration: 0.5s;
-} */
-
-/* .image-icon_solid::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        background-image: url('icons/icon_border.svg');
-        background-color: rgb(0, 0, 0); /* Semi-transparent black overlay */
-        /* Add other styles like transitions, etc. 
-    } */
-
-.icon_solid img {
-    z-index: 1; /* Appears below element 2 */
-    width:95%;
-    height: 95%;   
 }
 
-
 .icon_gradient{
+    min-width: 100px;
     width:100px;
     height:100px;
-
+    grid-row: 1;
     background-image: 
         linear-gradient(to bottom, rgba(91, 91, 91, 0), rgba(0, 0, 0, 0.1)), 
         url('icons/FoJYdD.png'),
@@ -81,12 +93,29 @@
     transition-duration: 0.5s;
 }
 
-.test {
-  width: 300px;
-  height: 80px;
-  border: double 4px transparent;
-  border-radius: 80px;
-  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #f00,#3020ff);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+.frame {
+    position: absolute;
+    top: 35%;
+    right: 0;
+}
+
+.blurry-frame {
+    position: absolute;
+    pointer-events: none;
+
+}
+.frame-overlay{
+    position: absolute; /* Position over the content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Apply the blur effect to the background behind the overlay */
+    pointer-events: none; /* Make the overlay itself unclickable, allowing clicks to pass to the blurred content */
+  }
+
+.bottom-group {
+    position: absolute;
+    bottom: 0;
 }
