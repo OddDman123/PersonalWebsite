@@ -1,5 +1,21 @@
 .body {
-    background-color: aquamarine;
+    
+
+
+       /* diameter of the circle */
+    --d: 2px; 
+    background : radial-gradient(
+        circle at 
+            var(--d) 
+            var(--d), 
+            
+        #ffffff79 calc(var(--d) - 1px), 
+        #ffffff00 var(--d)
+    ) 
+        0 0 / 15px 15px;
+
+    background-color: rgb(160, 193, 221);
+   /* mask-image: linear-gradient(to bottom, #ffffff, #00000000); */
 }
 
 .icn-group {
@@ -12,57 +28,62 @@
     padding: 20px; /*Adds some spacing inside the container */
     gap: 20px;
 
-    position: absolute;
-    left: 30%;
-    top: 0;
+    /* position: relative; */
+    /* left: 30%;
+    top: 0; */
  
-    width: 65%;
-    height: 150px;
+    width: 90%;
+    height: 80%;
     
     overflow-x: scroll;
     /* Firefox */
     scrollbar-width: none; 
     /* Internet Explorer 10+ */
     -ms-overflow-style: none;  
-    
+
     mask-image: linear-gradient(to right, transparent 0%, black 5%,black 95%, transparent 100%);
     
     /* border: 1px solid rgb(0, 0, 0);  */
-    background-color: aqua;
+    /* background-color: rgb(233, 233, 233); */
 }
+
 
 .icon_solid:hover ~ .icon_solid {
   transform: translateX(20px);
-  opacity: 0.9;
 }
 .icon_solid:has(~ .icon_solid:hover) {
     transform: translateX(-20px);
-    opacity: 0.9;
 }
 
 
 .icon_solid{
+    display: flex;
+    justify-content: top;
+    align-items: center;
+
+    flex-direction: column;
+
     min-width: 100px;
+
     flex: 0 0 auto;
-    width:100px;
-    height:100px;
+    width: 100px;
+    height: 100px;
     
-    background-image: url("icons/FoJYdD.png");
+    padding: 10px;
+
+    background-image: url("icons/icon_blue_background.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
+
     cursor:pointer;
-    border: 5px solid rgb(129, 129, 129); /* Essential for border-image to work */ 
-    border-radius: 15px;
+    border: none; 
     transition-duration: 0.5s;
 }
 
 .icon_solid:hover {
-    width: 150px;
-    height: 150px;
-    
-    background-color: #f00;
+    transform: scale(1.25);
     transition-duration: 0.5s;
 }
 
@@ -71,43 +92,51 @@
     transition-duration: 0.5s;
 }
 
-.icon_gradient{
-    min-width: 100px;
-    width:100px;
-    height:100px;
-    grid-row: 1;
-    background-image: 
-        linear-gradient(to bottom, rgba(91, 91, 91, 0), rgba(0, 0, 0, 0.1)), 
-        url('icons/FoJYdD.png'),
-        radial-gradient(circle at top left, rgb(221, 0, 255),#ffffff00),
-        radial-gradient(circle at top left, #ffffff00,#0088ffde);
+.icon_solid input{
+    max-width: 100%;
+    height: auto;
     
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    cursor:pointer;
-    
-    border: double 5px transparent;
-    border-radius: 15px;
-    background-origin: border-box;
-    background-clip: border-box, padding-box, border-box;
-    
-    transition-duration: 0.5s;
+
+    mask-image: url("icons/mask2.png");
+    mask-position: center center;
+    mask-size: cover; 
+    mask-repeat: no-repeat;
 }
 
-.icon_gradient:hover {
-    width:125px;
-    height:125px;
-    transition-duration: 0.5s;
-}
 
-.center-div{
+.container {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content:center; 
+    align-items:center;
+    padding: 10px; /*Adds some spacing inside the container */
+    gap: 20px;
+
+    position: absolute;
+    left: 33%;
+    top: 0;
+ 
+    width: 65%;
+    height: 150px;
+    
+    border: none; /*1px solid rgb(0, 0, 0); */
+    background-color: transparent;
 }
+
+.container_button {
+    transition-duration: 0.5s;
+}
+.container_button:hover{
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+}
+
+
 .frame {
     position: absolute;
-    top: 35%;
+    top: 25%;
     margin: auto;
     width: 90%;
 }
@@ -117,6 +146,7 @@
     pointer-events: none;
 
 }
+
 .frame-overlay{
     position: absolute; /* Position over the content */
     top: 0;
